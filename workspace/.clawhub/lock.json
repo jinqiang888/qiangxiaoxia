@@ -28,6 +28,10 @@
     "self-improvement": {
       "version": "1.0.0",
       "installedAt": 1773242834647
+    },
+    "deep-scraper": {
+      "version": "1.0.1",
+      "installedAt": 1773244684058
     }
   }
 }
