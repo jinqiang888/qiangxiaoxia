@@ -16,20 +16,21 @@ type GenerateVideoOptions = {
   outputPath?: string;
 };
 
-const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
+export const generateKnowledgeVideoV2 = async (options: GenerateVideoOptions) => {
   const {
     title,
     points,
     ctaText,
     themeColor = "#667eea",
     duration = 30,
-    outputPath = path.join(__dirname, "output", `knowledge_${Date.now()}.mp4`),
+    outputPath = path.join(__dirname, "output", `knowledge_v2_${Date.now()}.mp4`),
   } = options;
 
-  console.log("🎬 开始生成知识科普视频...");
+  console.log("🎬 开始生成优化版知识科普视频...");
   console.log(`📝 标题: ${title}`);
   console.log(`🎨 主题色: ${themeColor}`);
   console.log(`⏱️  时长: ${duration}秒`);
+  console.log(`✨ 使用优化版模板：组件化结构+流畅动画+高质量渲染参数`);
 
   // 确保输出目录存在
   const outputDir = path.dirname(outputPath);
@@ -46,14 +47,16 @@ const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
   // 获取合成
   console.log("🔍 正在获取合成...");
   const compositions = await getCompositions(bundleLocation);
-  const knowledgeComp = compositions.find((c) => c.id === "KnowledgeTemplate");
+  const knowledgeComp = compositions.find((c) => c.id === "KnowledgeTemplateV2");
   
   if (!knowledgeComp) {
-    throw new Error("未找到KnowledgeTemplate合成");
+    throw new Error("未找到KnowledgeTemplateV2合成");
   }
 
-  // 渲染视频
-  console.log("🎞️  正在渲染视频...");
+  // 渲染视频（使用最佳渲染参数）
+  console.log("🎞️  正在渲染视频（高质量参数）...");
+  console.log(`⚙️  渲染参数：CRF=23, preset=medium, 并发数=4, GPU加速`);
+  
   await renderMedia({
     composition: knowledgeComp,
     serveUrl: bundleLocation,
@@ -66,7 +69,7 @@ const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
       themeColor,
       duration,
     },
-    // 最佳渲染参数
+    // 最佳质量渲染参数
     crf: 23,
     preset: "medium",
     concurrency: 4,
@@ -76,16 +79,15 @@ const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
     },
   });
 
-  console.log(`✅ 视频生成完成！输出路径: ${outputPath}`);
+  console.log(`✅ 优化版视频生成完成！输出路径: ${outputPath}`);
+  console.log(`🎯 质量提升：组件化结构+流畅缓动动画+高质量编码`);
   return outputPath;
 };
 
-export { generateKnowledgeVideo };
-
-// 命令行调用示例
+// 命令行调用
 if (import.meta.url === `file://${process.argv[1]}`) {
   // 示例：生成喝水科普视频
-  generateKnowledgeVideo({
+  generateKnowledgeVideoV2({
     title: "你知道吗？每天喝水竟然有这么多好处！",
     points: [
       { emoji: "💧", text: "每天喝8杯水，皮肤变好还能提高代谢" },

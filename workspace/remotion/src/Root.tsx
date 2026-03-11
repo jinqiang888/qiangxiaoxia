@@ -20,10 +20,40 @@ const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* 知识科普类短视频模板 */}
+      {/* 知识科普类短视频模板 - V1 旧版 */}
       <Composition
         id="KnowledgeTemplate"
         component={KnowledgeTemplate}
+        durationInFrames={900} // 30秒
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: "你知道吗？每天喝水竟然有这么多好处！",
+          points: [
+            {
+              emoji: "💧",
+              text: "每天喝8杯水，皮肤变好还能提高代谢",
+            },
+            {
+              emoji: "⏰",
+              text: "早上起床空腹喝一杯温水，清肠又排毒",
+            },
+            {
+              emoji: "🚫",
+              text: "不要等到口渴了再喝水，那时候已经缺水了",
+            },
+          ],
+          ctaText: "今天你喝够水了吗？",
+          themeColor: "#667eea",
+          duration: 30,
+        }}
+      />
+
+      {/* 知识科普类短视频模板 - V2 优化版（组件化+流畅动画） */}
+      <Composition
+        id="KnowledgeTemplateV2"
+        component={KnowledgeTemplateV2}
         durationInFrames={900} // 30秒
         fps={30}
         width={1080}
