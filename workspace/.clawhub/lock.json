@@ -24,6 +24,10 @@
     "slack": {
       "version": "1.0.0",
       "installedAt": 1772440240388
+    },
+    "self-improvement": {
+      "version": "1.0.0",
+      "installedAt": 1773242834647
     }
   }
 }
