@@ -8,6 +8,8 @@
     "build": "remotion bundle src/Root.tsx",
     "generate": "tsx generate-video.ts",
     "generate:koubo": "tsx generate-koubo.ts",
+    "generate:batch": "tsx batch-generate.ts",
+    "build:docker": "docker build -t remotion-video-factory .",
     "generate:custom": "tsx -e \"require('./generate-video').generateKnowledgeVideo(require('./custom-content.json'))\""
   },
   "dependencies": {
@@ -16,6 +18,8 @@
     "@remotion/bundler": "^4.0.0",
     "@remotion/cli": "^4.0.0",
     "@remotion/renderer": "^4.0.0",
+    "@types/node-fetch": "^2.6.13",
+    "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remotion": "^4.0.0"

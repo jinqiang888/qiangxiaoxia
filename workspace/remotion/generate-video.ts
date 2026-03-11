@@ -16,7 +16,7 @@ type GenerateVideoOptions = {
   outputPath?: string;
 };
 
-export const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
+const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
   const {
     title,
     points,
@@ -74,6 +74,8 @@ export const generateKnowledgeVideo = async (options: GenerateVideoOptions) => {
   console.log(`✅ 视频生成完成！输出路径: ${outputPath}`);
   return outputPath;
 };
+
+export { generateKnowledgeVideo };
 
 // 命令行调用示例
 if (import.meta.url === `file://${process.argv[1]}`) {
