@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@xray2016/openclaw-mem0-plugin": "^1.0.9"
+  }
+}

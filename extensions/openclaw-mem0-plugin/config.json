@@ -1,0 +1,11 @@
+{
+  "apiKey": "mem0_volc_001",
+  "host": "mem0.volcengine.com",
+  "version": "v1",
+  "enableAutoSync": true,
+  "syncInterval": 300,
+  "memoryCompression": true,
+  "compressionRatio": 5,
+  "crossSessionSync": true,
+  "maxMemorySize": "1GB"
+}
