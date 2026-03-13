@@ -1,0 +1,12 @@
+# 排除大文件和依赖
+node_modules/
+*.so
+*.bin
+*.dll
+*.dylib
+*/cuda/*
+*/vulkan/*
+*.log
+tmp/
+temp/
+backups/*.tar.gz
